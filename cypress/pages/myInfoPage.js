@@ -7,8 +7,8 @@ class MyInfoPage {
             genericField:".oxd-input--active",
             dateField: "[placeholder='yyyy-dd-mm']",
             dateCloseButton: ".--close",
-            submitButton: "[type='submit']",
-            nationalityField: "[tabindex='0']"
+            submitButton: ".oxd-button",
+            nationalityField: "[type='submit']"
         }
         return selectors
     }
@@ -27,8 +27,9 @@ class MyInfoPage {
     }
 
     saveForm(){
-    cy.get(this.selectorsList().submitButton).eq(0).click()
+    cy.get(this.selectorsList().submitButton).eq(0).click({force: true})
     cy.get('body').should('contain', 'Successfully Updated')
+    cy.get('.oxd-toast-close')
     }
     }
 
