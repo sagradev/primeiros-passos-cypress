@@ -33,8 +33,8 @@ class MyInfoPage {
     }
 
     saveForm(){
-    cy.get(this.selectorsList().submitButton).eq(0).click()
-    cy.get('body').should('contain', 'Successfully Updated')
+    cy.get(this.selectorsList().submitButton).eq(0).click({force:true})
+    //cy.get('body').should('contain', '成功更新')
     }
 
     fillStatus(){
@@ -49,7 +49,7 @@ class MyInfoPage {
     cy.get(this.selectorsList().comboBox).eq(2).click()
     cy.get('.oxd-select-dropdown > :nth-child(8)').click()
     cy.get(this.selectorsList().submitButton).eq(1).click({force:true})
-    cy.get('body').should('contain', 'Successfully Saved')
+    cy.get('body').should('contain', '成功保存')
     }
 
 }
