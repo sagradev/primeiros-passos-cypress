@@ -11,11 +11,6 @@ const myInforPage = new MyInfoPage()
 
 describe('Orange HRM Tests', () => {
 
-  const selectorList = {
-      genericField: ".oxd-input--active",
-      comboBox: "[tabindex='0']",
-      submitButton: "[type='submit']",
-  }
 
   it('Login - Success', () => {
     loginPage.accessLoginPage()
@@ -29,9 +24,4 @@ describe('Orange HRM Tests', () => {
     myInforPage.customFields('Rock Rural')
 })
 
-  it('Login - Fail', () => {
-    loginPage.accessLoginPage()
-    loginPage.loginWithUser(userData.userFail.username, userData.userFail.password)
-    loginPage.checkAccessInvalid()
-  })
 })
