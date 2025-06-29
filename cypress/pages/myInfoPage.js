@@ -10,7 +10,6 @@ class MyInfoPage {
         dateField:"[placeholder='yyyy-dd-mm']",
         dateCloseButton: ".--close",
         comboBox: "[tabindex='0']",
-        wrongCredentialAlert: "[role='alert']"
 
     }
         return selectors
@@ -33,8 +32,8 @@ class MyInfoPage {
     }
 
     saveForm(){
-    cy.get(this.selectorsList().submitButton).eq(0).click({force:true})
-    //cy.get('body').should('contain', '成功更新')
+    cy.get(this.selectorsList().submitButton).eq(0).click()
+    cy.get('body').should('contain', 'Successfully Updated')
     }
 
     fillStatus(){
@@ -49,7 +48,7 @@ class MyInfoPage {
     cy.get(this.selectorsList().comboBox).eq(2).click()
     cy.get('.oxd-select-dropdown > :nth-child(8)').click()
     cy.get(this.selectorsList().submitButton).eq(1).click({force:true})
-    cy.get('body').should('contain', '成功保存')
+    cy.get('body').should('contain', 'Successfully Saved')
     }
 
 }
